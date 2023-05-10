@@ -50,6 +50,43 @@ img {
   margin-top: 1.25rem;
 }
 
+.container {
+  padding: 0 var(--spacer);
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer);
+}
+
+  /* How to go around using "gap" is not supported by safari */
+  /* .flex > * + * {
+    margin: var(--spacer) 0 0 0;
+   } */
+
+@media (min-width: 40em) {
+  .flex {
+    flex-direction: row;
+  }
+
+  /* How to go around using "gap" is not supported by safari */
+  /* .flex > * + * {
+    margin: 0 0 0 var(--spacer);
+   } */
+}
+
+.bg-dark {
+  color: var(--clr-neutral-100);
+  background: var(--clr-neutral-900);
+}
+
+.text-accent {
+  color: var(--clr-accent-400);
+}
+
 /* general styling */
 
 body {
