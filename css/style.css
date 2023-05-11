@@ -47,7 +47,7 @@ img {
 
 /* Utility classes */
 .flow-content > * + * {
-  margin-top: 1.25rem;
+  margin-top: var(--flow-space, var(--spacer));
 }
 
 .container {
@@ -62,8 +62,8 @@ img {
   gap: var(--spacer);
 }
 
-  /* How to go around using "gap" is not supported by safari */
-  /* .flex > * + * {
+/* How to go around using "gap" is not supported by safari */
+/* .flex > * + * {
     margin: var(--spacer) 0 0 0;
    } */
 
@@ -76,6 +76,10 @@ img {
   /* .flex > * + * {
     margin: 0 0 0 var(--spacer);
    } */
+}
+
+.shadow {
+  box-shadow: var(--box-shadow);
 }
 
 .bg-dark {
@@ -105,6 +109,18 @@ h1 span {
   font-weight: 700;
 }
 
+section {
+  padding: 4.125rem 0;
+}
+
+@media (min-width: 40em) {
+  section {
+    padding: 8.125rem 0;
+  }
+}
+
+/* components */
+
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -118,12 +134,28 @@ h1 span {
   color: var(--clr-neutral-900);
 }
 
-section {
-  padding: 4.125rem 0;
+.join-now {
+  --flow-space: 2rem;
 }
 
-@media (min-width: 40em) {
-  section {
-    padding: 8.125rem 0;
-  }
+.join-now li::before {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  background: var(--clr-accent-400);
+  position: absolute;
+  transform: translate(-0.5rem, -0.5rem);
+  z-index: -1;
+}
+
+.hero {
+  --flow-space: 3rem;
+}
+
+.cta {
+  --flow-space: 3rem;
+  background-image: url(/img/cta-bg.jpg);
+  background-size: cover;
+  text-align: center;
 }
